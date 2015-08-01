@@ -152,6 +152,8 @@ Now that you have performed this update to the Model, you will need to perform t
 	
 Since we did not provide a default value for the slug, and we already have existing data in the model, then the migrate command will give you two options. Select the option to provide a default, and enter ''. Dont worry this will get updated shortly. Now re-run your population script. Since the ``save`` method is called for each Category, the overrided ``save`` method will be executed, updating the slug field. Run the server, and inspect the data in the models via the admin interface.
 
+If you get the error "django.db.utils.Integrity error: Slug column is not unique" try deleting the file db.sqlite3 from your project folder.
+
 In the admin interface you may want it to automatically pre-populate the slug field as your type in the category name. To do this you can update ``rango/admin.py`` with the following code:
 
 
